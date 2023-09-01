@@ -1,0 +1,21 @@
+import java.util.*;
+public class exercicio1
+{
+    public static void main(String args[]){
+        Scanner in = new Scanner(System.in);
+        
+        System.out.println("\f Digie uma palavra: ");
+        String palavra = in.nextLine();
+        
+        System.out.println("Digite a posição do String a ser pesquisada: ");
+        int posicao = in.nextInt();
+        if (posicao<palavra.length() && posicao>=0){
+            System.out.print("O caracter da posição" + posicao + " é " + palavra.charAt(posicao));
+        }else {
+            System.out.println("Posição invalida!!");
+        }
+        
+        
+        
+    }
+}
