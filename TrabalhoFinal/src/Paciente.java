@@ -99,7 +99,7 @@ public class Paciente {
         return peso/Math.pow(altura,2);
     }
     public double pesoIdael(double altura, char sexo){
-        if(sexo == 'M'){
+        if(sexo == 'H' || sexo =='h'){
             return 72.7 * altura -58;
         }else{
             return 62.1 * altura -44.7;
