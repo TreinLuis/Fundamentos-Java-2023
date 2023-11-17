@@ -41,4 +41,22 @@ public class ListaDePacientes {
             System.out.println(pacientes[i]);
         }
     }
+    public Paciente consultaNome(String nome){
+        for(int i = 0;i< tamanho;i++)
+            if(pacientes[i].getNome().equalsIgnoreCase(nome)){
+                return pacientes[i];
+            }else{
+                return null
+            }
+     public Paciente consultaCodigo(int codigo){
+        for(int i = 0;i< tamanho;i++)
+            if(pacientes[i].getCodigo() == codigo){
+                return pacientes[i];
+            }else{
+                return null
+            }   
+        
+            
+            
+        
 }
