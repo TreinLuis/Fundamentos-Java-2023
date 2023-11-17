@@ -14,6 +14,7 @@ public class Aplicacao {
             System.out.println("3. Consultar informações pelo nome do paciente");
             System.out.println("4. Consultar informações pelo código do paciente");
             System.out.println("5. Listar Pacientes Apartir de Uma Idade Informada");
+            System.out.println("6. Listar Todos os Pacientes");
             System.out.println("0. Sair");
 
             System.out.print("Escolha uma opção: ");
@@ -74,9 +75,16 @@ public class Aplicacao {
                         System.out.println(auxilar.toString())
                     }
                 case 5:
-                    // Listar Pacientes
-                    System.out.println("\nLista de Pacientes:");
-                    listaDePacientes.listarPacientesPorIdade();
+                    // Listar Pacientes Apartir de Uma Idade Informada
+                    System.out.println("\nLista de Pacientes Apartir de Uma Idade Informada:");
+                    System.out.println("Informe uma Idade: ");
+                    int idadeInformada = in.nextInt();
+                    listaDePacientes.listarPacientesPorIdade(idadeInformada);
+                    break;
+                case 6:
+                    // Listar Todos Pacientes
+                    System.out.println("\nLista de Todos os Pacientes:");
+                    listaDePacientes.listarPacientes();
                     break;
                 case 0:
                     // Sair
