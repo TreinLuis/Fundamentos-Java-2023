@@ -41,6 +41,13 @@ public class ListaDePacientes {
             System.out.println(pacientes[i]);
         }
     }
+    public void listarPacientesPorIdade(int idadeInformada){
+        for(int i = 0;i < tamanh;i++){
+            if(pacientes[i].getIdade >= idadeInformada){
+                System.out.println(pacientes[i].getNome);
+            }
+        }
+    }
     public Paciente consultaNome(String nome){
         for(int i = 0;i< tamanho;i++)
             if(pacientes[i].getNome().equalsIgnoreCase(nome)){
