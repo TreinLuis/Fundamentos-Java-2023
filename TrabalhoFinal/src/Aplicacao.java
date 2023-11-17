@@ -3,6 +3,7 @@ public class Aplicacao {
     public static void main(String[] args) {
         ListaDePacientes listaDePacientes = new ListaDePacientes(10);
         Scanner scanner = new Scanner(System.in);
+        Paciente auxiliar = new Paciente;
 
         int opcao;
 
@@ -10,7 +11,9 @@ public class Aplicacao {
             System.out.println("\nMenu:");
             System.out.println("1. Adicionar Paciente");
             System.out.println("2. Remover Paciente");
-            System.out.println("3. Listar Pacientes");
+            System.out.println("3. Consultar informações pelo nome do paciente");
+            System.out.println("4. Consultar informações pelo código do paciente");
+            System.out.println("5. Listar Pacientes Apartir de Uma Idade Informada");
             System.out.println("0. Sair");
 
             System.out.print("Escolha uma opção: ");
@@ -47,11 +50,33 @@ public class Aplicacao {
                     int codigoRemover = scanner.nextInt();
                     listaDePacientes.removerPaciente(codigoRemover);
                     break;
-
                 case 3:
+                    // Consulta Paciente por Nome
+                    System.out.println("\nConsultar informações pelo nome do paciente:");
+                    System.out.print("Digite o nome do paciente a ser consultado: ");
+                    String pacienteNome = scanner.next();
+                    auxiliar = listaDePacientes.consultaNome(pacienteNome);
+                    if(auxilar == null){
+                        System.out.println("Paciente não encontrado!");
+                    } else{
+                        System.out.println(auxilar.toString())
+                    }
+                    break;
+                case 4:
+                   // Consulta Paciente por Código
+                    System.out.println("\nConsultar informações pelo código do paciente:");
+                    System.out.print("Digite o código do paciente a ser consultado: ");
+                    int pacienteCodigo = scanner.nextInt();
+                    auxiliar = listaDePacientes.consultaCodigo(pacienteCodigo);
+                    if(auxilar == null){
+                        System.out.println("Paciente não encontrado!");
+                    } else{
+                        System.out.println(auxilar.toString())
+                    }
+                case 5:
                     // Listar Pacientes
                     System.out.println("\nLista de Pacientes:");
-                    listaDePacientes.listarPacientes();
+                    listaDePacientes.listarPacientesPorIdade();
                     break;
                 case 0:
                     // Sair
