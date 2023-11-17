@@ -69,7 +69,7 @@ public class Paciente {
     }
 
     public void setSexo(char sexo) {
-        if(sexo == 'M' || sexo =='F' ){
+        if(sexo == 'H' || sexo =='h' || sexo =='M' || sexo =='m' ){
             this.sexo = sexo;
         }
     }
