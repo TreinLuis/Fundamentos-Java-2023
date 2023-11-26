@@ -42,8 +42,8 @@ public class Aplicacao {
                     // Remover Paciente
                     System.out.println("\nRemover Paciente:");
                     System.out.print("Digite o código do paciente a ser removido: ");
-                    int codigoRemover = in.nextInt();
-                    listaDePacientes.removerPaciente(codigoRemover);
+                    int codigoBusca = in.nextInt();
+                    listaDePacientes.removerPaciente(codigoBusca);
                     break;
                 case 3:
                     // Consulta Paciente por Nome
@@ -70,34 +70,49 @@ public class Aplicacao {
                     }
                     break;
                 case 5:
+                    // Exibe somente o IMC
+                    System.out.println("\nExibe IMC: ");
+                    System.out.println("Informe o código: ");
+                    codigoBusca = in.nextInt();
+                    listaDePacientes.exibeIMC(codigoBusca);
+                    break;
+                case 6:
                     // Listar Pacientes Apartir de Uma Idade Informada
                     System.out.println("\nLista de Pacientes Apartir de Uma Idade Informada:");
                     System.out.println("Informe uma Idade: ");
                     int idadeInformada = in.nextInt();
                     listaDePacientes.listarPacientesPorIdade(idadeInformada);
                     break;
-                case 6:
+                case 7:
                     // Listar Todos Pacientes
                     System.out.println("\nLista de Todos os Pacientes:");
                     listaDePacientes.listarPacientes();
                     break;
-                case 7:
+                case 8:
                     // Alterar Alguma Informações de Um Determinado Paciente
                     System.out.print("Digite o código do paciente!");
-                    int codigoBusca = in.nextInt();
+                    codigoBusca = in.nextInt();
                     System.out.println("Digite o novo peso do paciente");
                     double novoPeso = in.nextDouble();
 
                     listaDePacientes.alteraPeso(codigoBusca,novoPeso);
                     break;
-                case 8:
+                case 9:
                     // Alterar Alguma Informações de Um Determinado Paciente
                     System.out.print("Digite o código do paciente!");
-                    int codigoBuscaAltura = in.nextInt();
+                     codigoBusca = in.nextInt();
                     System.out.println("Digite a nova altura do paciente");
                     double novaAltura = in.nextDouble();
 
-                    listaDePacientes.alteraAltura(codigoBuscaAltura,novaAltura);
+                    listaDePacientes.alteraAltura(codigoBusca,novaAltura);
+                    break;
+                case 10:
+                    // Alterar Alguma Informações de Um Determinado Paciente
+                    System.out.print("Digite o código do paciente!");
+                    codigoBusca = in.nextInt();
+                    System.out.println("Digite o novo Sexo - Digite somente a inicial (Feminino/Masculino): ");
+                    char novoSexo = in.next().charAt(0);
+                    listaDePacientes.alteraSexo(codigoBusca,novoSexo);
                     break;
                 case 0:
                     // Sair
@@ -117,14 +132,13 @@ public class Aplicacao {
         System.out.println("2. Remover Paciente");
         System.out.println("3. Consultar Informações Pelo Nome Do Paciente");
         System.out.println("4. Consultar informações Pelo Código Do Paciente");
-        System.out.println("5. Listar Pacientes Apartir de Uma Idade Informada");
-        System.out.println("6. Listar Todos os Pacientes");
-        System.out.println("7. Alterar Peso!");
-        System.out.println("8. Alterar Altura!");
-        System.out.println("9. Alterar Sexo!");
+        System.out.println("5. Consultar somente IMC!");
+        System.out.println("6. Listar Pacientes Apartir de Uma Idade Informada");
+        System.out.println("7. Listar Todos os Pacientes");
+        System.out.println("8. Alterar Peso!");
+        System.out.println("9. Alterar Altura!");
+        System.out.println("10. Alterar Sexo!");
         System.out.println("0. Sair");
     }
 
 }
-
-
