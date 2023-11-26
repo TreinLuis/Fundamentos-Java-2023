@@ -7,7 +7,11 @@ public class Paciente {
     private int idade;
 
     public Paciente(int codigo,String nome,double peso,char sexo,double altura,int idade){
-        this.codigo = codigo;
+        if(codigo > 0){
+            this.codigo = codigo;
+        }else{
+            throw new IllegalArgumentException("Código Inválido!");
+        }
         if(nome != null && !nome.isEmpty()){
             this.nome = nome;
         }else{
@@ -117,4 +121,6 @@ public class Paciente {
                 codigo, nome, sexoPrint, peso, altura, idade, imc(peso, altura), pesoIdael(altura, sexo));
     }
 }
+
+
 
