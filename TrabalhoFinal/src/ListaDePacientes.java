@@ -125,5 +125,17 @@ public class ListaDePacientes {
             throw new IllegalArgumentException("O sexo do paciente não pode ser nulo");
         }
     }
+    public void exibeIMC(int codigo){
+        for (int i = 0; i < tamanho; i++) {
+            if (pacientes[i].getCodigo() == codigo) {
+                double peso = pacientes[i].getPeso();
+                double altura = pacientes[i].getAltura();
+                System.out.print("O IMC do paciente de código número: "+ codigo +" é ");
+                System.out.printf("%.2f",pacientes[i].imc(peso , altura));
+            }else{
+                System.out.println("Paciente não encontrado");
+            }
+        }
+    }
 }
 
