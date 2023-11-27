@@ -4,17 +4,14 @@ public class Aplicacao {
         ListaDePacientes listaDePacientes = new ListaDePacientes(10);
         Scanner in = new Scanner(System.in);
         Paciente auxiliar;
-
-
         int opcao;
-
         do {
             menuPrincipal();
             System.out.print("Escolha uma opção: ");
             opcao = in.nextInt();
 
             switch (opcao) {
-                case 1:
+                case 1 :
                     // Adicionar Paciente
                     System.out.println("\nAdicionar Paciente:");
                     System.out.print("Código: ");
@@ -77,18 +74,22 @@ public class Aplicacao {
                     listaDePacientes.exibeIMC(codigoBusca);
                     break;
                 case 6:
+                // Listar Pacientes Apartir de Uma Idade Informada
+                listaDePacientes.mediaDasIdades();
+                break;
+                case 7:
                     // Listar Pacientes Apartir de Uma Idade Informada
                     System.out.println("\nLista de Pacientes Apartir de Uma Idade Informada:");
                     System.out.println("Informe uma Idade: ");
                     int idadeInformada = in.nextInt();
                     listaDePacientes.listarPacientesPorIdade(idadeInformada);
                     break;
-                case 7:
+                case 8:
                     // Listar Todos Pacientes
                     System.out.println("\nLista de Todos os Pacientes:");
                     listaDePacientes.listarPacientes();
                     break;
-                case 8:
+                case 9:
                     // Alterar Alguma Informações de Um Determinado Paciente
                     System.out.print("Digite o código do paciente!");
                     codigoBusca = in.nextInt();
@@ -97,7 +98,7 @@ public class Aplicacao {
 
                     listaDePacientes.alteraPeso(codigoBusca,novoPeso);
                     break;
-                case 9:
+                case 10:
                     // Alterar Alguma Informações de Um Determinado Paciente
                     System.out.print("Digite o código do paciente!");
                      codigoBusca = in.nextInt();
@@ -106,7 +107,7 @@ public class Aplicacao {
 
                     listaDePacientes.alteraAltura(codigoBusca,novaAltura);
                     break;
-                case 10:
+                case 11:
                     // Alterar Alguma Informações de Um Determinado Paciente
                     System.out.print("Digite o código do paciente!");
                     codigoBusca = in.nextInt();
@@ -128,17 +129,17 @@ public class Aplicacao {
     public static void menuPrincipal(){
         Scanner in = new Scanner(System.in);
         System.out.println("\nMenu:");
-        System.out.println("1. Adicionar Paciente");
-        System.out.println("2. Remover Paciente");
-        System.out.println("3. Consultar Informações Pelo Nome Do Paciente");
-        System.out.println("4. Consultar informações Pelo Código Do Paciente");
-        System.out.println("5. Consultar somente IMC!");
-        System.out.println("6. Listar Pacientes Apartir de Uma Idade Informada");
-        System.out.println("7. Listar Todos os Pacientes");
-        System.out.println("8. Alterar Peso!");
-        System.out.println("9. Alterar Altura!");
-        System.out.println("10. Alterar Sexo!");
-        System.out.println("0. Sair");
+        System.out.println("1 . Adicionar Paciente");
+        System.out.println("2 . Remover Paciente");
+        System.out.println("3 . Consultar Informações Pelo Nome Do Paciente");
+        System.out.println("4 . Consultar Informações Pelo Código Do Paciente");
+        System.out.println("5 . Consultar Somente IMC!");
+        System.out.println("6 . Exibir a Media Das Idades!");
+        System.out.println("7 . Listar Pacientes Apartir De Uma Idade Informada");
+        System.out.println("8 . Listar Todos Os Pacientes");
+        System.out.println("9 . Alterar Peso!");
+        System.out.println("10. Alterar Altura!");
+        System.out.println("11. Alterar Sexo!");
+        System.out.println("00. Sair");
     }
-
 }
